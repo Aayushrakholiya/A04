@@ -64,7 +64,8 @@ def load_post_data_view(request, num_posts):
                 'body': obj.body,
                 'liked': True if request.user in obj.liked.all() else False,
                 'count': obj.like_count,
-                'author': obj.author.user.username
+                'author': obj.author.user.username,
+                'author_avatar': obj.author.avatar.url,
             }
             data.append(item)
         return JsonResponse({'data':data[lower:upper], 'size': size})
@@ -80,6 +81,9 @@ def post_detail_data_view(request, pk):
         'body': obj.body,
         'author': obj.author.user.username,
         'logged_in': request.user.username,
+        'author_avatar': obj.author.avatar.url,
+        'liked': True if request.user in obj.liked.all() else False,
+        'count': obj.like_count,
     }
     return JsonResponse({'data':data})
     return redirect('post:main-board')
