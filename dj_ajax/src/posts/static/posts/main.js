@@ -88,7 +88,7 @@ const getData = () => {
                             <h5 class="card-title">${el.title}</h5>
                             <p class="card-text">${el.body}</p>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer shadow bg-light">
                             <div class="row">
                                 <div class="col-2">
                                     <a href="/post/${el.id}/" class="btn btn-primary">Details</a>
@@ -148,7 +148,7 @@ postForm.addEventListener('submit', e=>{
                         <h5 class="card-title">${response.title}</h5>
                         <p class="card-text">${response.body}</p>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer shadow bg-light">
                         <div class="row">
                             <div class="col-2">
                                 <a href="/post/${response.id}/" class="btn btn-primary">Details</a>
